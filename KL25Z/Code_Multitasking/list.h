@@ -1,0 +1,24 @@
+
+#ifndef __LISTH__
+#define __LISTH__
+
+#include "defs.h"
+/**
+ * Campos dos elementos de uma lista.
+ * Esta estrutura precisa ser o primeiro campo de qualquer estrutura
+ * a ser usada em uma lista.
+ */
+typedef struct {
+   void *next;
+   void *prev;
+} list_item_t;
+
+void list_add(void *list, void *item);
+void list_push(void *list, void *item);
+void list_remove(void *list, void *item);
+void *list_pop(void *list);
+bool_t list_contains(void *list, void *item);
+
+#define list_for_each(X, Y)   for(Y=X;Y!=NULL;Y=Y->list.next)
+
+#endif
